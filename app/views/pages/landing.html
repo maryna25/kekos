@@ -1,0 +1,12 @@
+<div ng-controller="MemesController as memes" ng-init="memes.load()">
+  <button ng-click="memes.load()">Load Memes</button>
+  <ul>
+    <li ng-repeat="meme in memes.memes">
+      {{ meme.title }}
+      <br/>
+      <button ng-click="memes.timestamps(meme)">get creation time</button>
+      <br/>
+      <span ng-show="meme.created_at">Created at {{ meme.created_at }}</span>
+    </li>
+  </ul>
+</div>
